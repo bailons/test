@@ -4,7 +4,7 @@ package pcModel;
  * @ClassName ThreadProducer
  * @Description TODO
  * @Author leibailong
- * @Date 2018/10/31 0031 15:14
+ * @Date 2018/10/31 15:14
  * @Version 1.0
  **/
 public class ThreadProducer extends Thread {

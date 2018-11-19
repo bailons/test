@@ -4,7 +4,7 @@ package pcModel;
  * @ClassName Main
  * @Description 生产者消费者模型
  * @Author leibailong
- * @Date 2018/10/30 0030 20:06
+ * @Date 2018/10/30 20:06
  * @Version 1.0
  **/
 public class Main {

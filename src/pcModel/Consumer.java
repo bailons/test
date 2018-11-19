@@ -4,7 +4,7 @@ package pcModel;
  * @ClassName Consumer
  * @Description TODO
  * @Author leibailong
- * @Date 2018/10/31 0031 15:10
+ * @Date 2018/10/31 15:10
  * @Version 1.0
  **/
 public class Consumer {
