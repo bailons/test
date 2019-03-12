@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            font-weight: normal;
+        }
+
+        .box {
+            width: 450px;
+            height: auto;
+            background: #fff;
+            border-radius: 3px;
+            margin: 50px auto;
+            padding-bottom: 1em;
+            box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 15px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .header {
+            width: 100%;
+            height: auto;
+            padding: 0.5em 0.8em;
+            border-bottom: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .body {
+            width: 100%;
+            height: auto;
+            text-align: center;
+        }
+
+        .body:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .body > div {
+            width: 180px;
+            margin: 0 auto;
+        }
+
+        .body > div > span {
+            padding-top: 1em;
+            float: left;
+        }
+
+        #tip {
+            display: none;
+        }
+
+        .footer {
+            width: 180px;
+            height: 30px;
+            background: #2ab8ff;
+            line-height: 30px;
+            text-align: center;
+            margin: 1em auto;
+            color: #ccc;
+            border: 1px solid #2193cc;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .footer:hover {
+            background: #4ec1fb;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="header">
+            <h2>简易抽奖系统</h2>
+        </div>
+        <div class="body">
+            <div>
+                <span id="tip">恭喜你！获得：</span>
+                <span id="put"></span>
+            </div>
+        </div>
+        <div class="footer">
+            点击抽奖
+        </div>
+    </div>
+</body>
+<script>
+
+    /*//按指定位置删除
+    Array.prototype.removeIndex = function (index) {
+        if (index > - 1) {
+            this.splice(index, 1);
+        }
+    };
+    //按元素名称删除
+    Array.prototype.remove = function (val) {
+        var index = this.indexOf(val);
+        if (index > - 1) {
+            this.splice(index, 1);
+        }
+    };*/
+
+
+    /* 获取按钮 */
+    var btn = document.querySelector('.footer');
+    /* 获取提示的标签 */
+    var tip = document.querySelector('#tip');
+    /* 获取要输出的标签 */
+    var put = document.querySelector('#put');
+    /* 定义中奖的项目 */
+    var gift = ['QQ会员', '黄钻', '绿钻', '黑钻', '紫钻', '红钻', '蓝钻', '钻皇'];
+    /* 定义i==true 用于判断 */
+    var i = true;
+    /* 定义定时器 */
+    var Timer;
+    var n = 0;
+
+    btn.onclick = function () {
+        if (i == true) {
+            btn.style.background = '#f1516c';
+            btn.style.borderColor = '#db2745';
+            tip.style.display = 'block';
+            Timer = setInterval(function () {
+                n++;
+                if (n == gift.length) {
+                    n = 0;
+                }
+                put.innerHTML = gift[n];
+            }, 50);
+            btn.innerHTML = '停止';
+            i = false;
+        } else {
+            btn.style.background = '#2ab8ff';
+            btn.style.borderColor = '#2193cc';
+            clearInterval(Timer);
+            btn.innerHTML = '开始抽奖';
+            i = true;
+        }
+    };
+</script>
