@@ -18,7 +18,7 @@ public class NppushAesUtils {
 
     private static Cipher encipher;
 
-    private static Map cipherMap = new ConcurrentHashMap();
+    private static volatile Map cipherMap = new ConcurrentHashMap();
 
     private static String enInitLock = "enInitLock";
     private static String deInitLock = "deInitLock";
