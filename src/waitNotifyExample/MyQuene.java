@@ -1,7 +1,5 @@
 package waitNotifyExample;
 
-import sun.util.locale.provider.TimeZoneNameUtility;
-
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
