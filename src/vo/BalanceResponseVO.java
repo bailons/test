@@ -1,29 +1,36 @@
-package vo.bank;
+package vo;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import vo.bank.common.ResponseVO;
 
 import java.math.BigDecimal;
 
 /**
- * 保证金查询[ZJW003]响应体
+ * 余额查询[ZJW001]响应体
  **/
 @XStreamAlias("data")
-public class DepositResponseVO extends ResponseVO {
-
+public class BalanceResponseVO extends ResponseVO {
     //账号
     @XStreamAlias("AcctNo")
     private String acctNo;
-    //圈存金额以分为单位
-    @XStreamAlias("CtrlBalance")
-    private BigDecimal ctrlBalance;
-    //圈存状态
-    @XStreamAlias("Status")
-    private String status;
+    //付款人户名
+    @XStreamAlias("AcctName")
+    private String acctName;
+    //账户状态0-正常及部分冻结,2-全部冻结,3-结清,7-单向冻结
+    @XStreamAlias("AccStat")
+    private String accStat;
+    //账户余额 以分为单位
+    @XStreamAlias("Balance")
+    private BigDecimal balance;
+    //账户可用余额
+    @XStreamAlias("UseBalance")
+    private BigDecimal useBalance;
+    //账号种类
+    @XStreamAlias("AccType")
+    private String accType;
     //响应备用字段1
     @XStreamAlias("Fld1")
     private String fld1;
-    ////响应备用字段2
+    //响应备用字段2
     @XStreamAlias("Fld2")
     private String fld2;
     //响应备用字段3
@@ -44,20 +51,44 @@ public class DepositResponseVO extends ResponseVO {
         this.acctNo = acctNo;
     }
 
-    public BigDecimal getCtrlBalance() {
-        return ctrlBalance;
+    public String getAcctName() {
+        return acctName;
     }
 
-    public void setCtrlBalance(BigDecimal ctrlBalance) {
-        this.ctrlBalance = ctrlBalance;
+    public void setAcctName(String acctName) {
+        this.acctName = acctName;
     }
 
-    public String getStatus() {
-        return status;
+    public String getAccStat() {
+        return accStat;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setAccStat(String accStat) {
+        this.accStat = accStat;
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
+
+    public BigDecimal getUseBalance() {
+        return useBalance;
+    }
+
+    public void setUseBalance(BigDecimal useBalance) {
+        this.useBalance = useBalance;
+    }
+
+    public String getAccType() {
+        return accType;
+    }
+
+    public void setAccType(String accType) {
+        this.accType = accType;
     }
 
     public String getFld1() {

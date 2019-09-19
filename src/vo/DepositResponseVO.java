@@ -1,36 +1,37 @@
-package vo.bank;
+package vo;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import vo.bank.common.RequestVO;
+
+import java.math.BigDecimal;
 
 /**
- *保证金查询[ZJW003]请求体
+ * 保证金查询[ZJW003]响应体
  **/
 @XStreamAlias("data")
-public class DepositRequestVO extends RequestVO {
+public class DepositResponseVO extends ResponseVO {
 
     //账号
     @XStreamAlias("AcctNo")
     private String acctNo;
-    //交易日期
-    @XStreamAlias("CtrlDate")
-    private String ctrlDate;
-    //事故序号
-    @XStreamAlias("CtrlSeqno")
-    private String ctrlSeqno;
-    //备用字段1
+    //圈存金额以分为单位
+    @XStreamAlias("CtrlBalance")
+    private BigDecimal ctrlBalance;
+    //圈存状态
+    @XStreamAlias("Status")
+    private String status;
+    //响应备用字段1
     @XStreamAlias("Fld1")
     private String fld1;
-    //备用字段2
+    ////响应备用字段2
     @XStreamAlias("Fld2")
     private String fld2;
-    //备用字段3
+    //响应备用字段3
     @XStreamAlias("Fld3")
     private String fld3;
-    //备用字段4
+    //响应备用字段4
     @XStreamAlias("Fld4")
     private String fld4;
-    //备用字段5
+    //响应备用字段5
     @XStreamAlias("Fld5")
     private String fld5;
 
@@ -42,20 +43,20 @@ public class DepositRequestVO extends RequestVO {
         this.acctNo = acctNo;
     }
 
-    public String getCtrlDate() {
-        return ctrlDate;
+    public BigDecimal getCtrlBalance() {
+        return ctrlBalance;
     }
 
-    public void setCtrlDate(String ctrlDate) {
-        this.ctrlDate = ctrlDate;
+    public void setCtrlBalance(BigDecimal ctrlBalance) {
+        this.ctrlBalance = ctrlBalance;
     }
 
-    public String getCtrlSeqno() {
-        return ctrlSeqno;
+    public String getStatus() {
+        return status;
     }
 
-    public void setCtrlSeqno(String ctrlSeqno) {
-        this.ctrlSeqno = ctrlSeqno;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getFld1() {

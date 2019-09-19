@@ -1,4 +1,4 @@
-package vo.bank.common;
+package vo;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 

@@ -1,7 +1,5 @@
-package vo.bank;
+package vo;
 
-
-import vo.bank.common.MessageUtil;
 
 public class Test {
 

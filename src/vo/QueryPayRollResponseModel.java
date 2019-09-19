@@ -1,7 +1,6 @@
-package vo.bank;
+package vo;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import vo.bank.common.ResponseVO;
 
 /**
  * 查询工资单[ZJW004]响应体
