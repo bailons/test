@@ -46,20 +46,19 @@ public class Test {
         //System.out.println(EqpDeviceTypeEnum.TAILBOX.getCode());
         /*Integer a = new Integer(1231);
         System.out.println(a.toString());*/
-        /*List<String> old = new LinkedList<>();
+        List<String> old = new LinkedList<>();
         old.add("aaaa");
         old.add("bbbb");
         old.add("cccc");
 
         List<String> news = new LinkedList<>();
         news.add("aaaa");
-        news.add("bbbb");
         news.add("dddd");
         news.add("eeee");
         news.add("ffff");
 
         old.removeAll(news);
-        old.forEach(o-> System.out.println(o));*/
+        old.forEach(o-> System.out.println(o));
 
        /* String aaa= "asdfasdf21231,1231dsadwasdf";
         String[] aad = aaa.split(",");*/
@@ -77,9 +76,9 @@ public class Test {
         System.out.println(person2.toString());
 */
 
-        Byte a = 123;
+        /*Byte a = 123;
         String b = "123";
-        System.out.println(a.toString().equals(b));
+        System.out.println(a.toString().equals(b));*/
 
 
     }
