@@ -1,5 +1,9 @@
-package vo;
+package bank;
 
+
+import bank.common.MessageUtil;
+import bank.vo.BalanceRequestVO;
+import bank.vo.BalanceResponseVO;
 
 public class Test {
 

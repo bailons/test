@@ -1,18 +1,38 @@
-package vo;
+package bank.vo;
 
+import bank.common.RequestVO;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 /**
  * 查询工资单[ZJW004]请求体
  **/
 @XStreamAlias("data")
-public class QueryPayRollRequestModel extends RequestVO {
+public class QueryResultRequestVO extends RequestVO {
 	//账号
 	@XStreamAlias("AcctNo")
 	private String acctNo;
 	//批次号
 	@XStreamAlias("BatNo")
 	private String batNo;
+	//文件类型
+	@XStreamAlias("Type")
+	private String type;
+	//批次状态码
+	@XStreamAlias("StatNo")
+	private String statNo;
+	//批次状态信息
+	@XStreamAlias("StatMsg")
+	private String statMsg;
+	//文件路径
+	@XStreamAlias("FilePath")
+	private String filePath;
+	//文件名称
+	@XStreamAlias("FileName")
+	private String fileName;
+	//总笔数
+	@XStreamAlias("TotalCnt")
+	private String totalCnt;
+
 	//备用字段
 	@XStreamAlias("Fld1")
 	private String fld1;
@@ -43,6 +63,54 @@ public class QueryPayRollRequestModel extends RequestVO {
 
 	public void setBatNo(String batNo) {
 		this.batNo = batNo;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getStatNo() {
+		return statNo;
+	}
+
+	public void setStatNo(String statNo) {
+		this.statNo = statNo;
+	}
+
+	public String getStatMsg() {
+		return statMsg;
+	}
+
+	public void setStatMsg(String statMsg) {
+		this.statMsg = statMsg;
+	}
+
+	public String getFilePath() {
+		return filePath;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public String getTotalCnt() {
+		return totalCnt;
+	}
+
+	public void setTotalCnt(String totalCnt) {
+		this.totalCnt = totalCnt;
 	}
 
 	public String getFld1() {

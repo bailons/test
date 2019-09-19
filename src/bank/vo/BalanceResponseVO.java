@@ -1,5 +1,6 @@
-package vo;
+package bank.vo;
 
+import bank.common.ResponseVO;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import java.math.BigDecimal;

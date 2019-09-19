@@ -1,4 +1,4 @@
-package vo;
+package bank.common;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;

@@ -1,36 +1,37 @@
-package vo;
+package bank.vo;
 
+import bank.common.ResponseVO;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 /**
- * 查询工资单[ZJW004]请求体
+ * 查询工资单[ZJW004]响应体
  **/
 @XStreamAlias("data")
-public class QueryResultRequestModel extends RequestVO {
+public class QueryPayRollResponseVO extends ResponseVO {
 	//账号
 	@XStreamAlias("AcctNo")
 	private String acctNo;
 	//批次号
 	@XStreamAlias("BatNo")
 	private String batNo;
-	//文件类型
-	@XStreamAlias("Type")
-	private String type;
-	//批次状态码
-	@XStreamAlias("StatNo")
-	private String statNo;
-	//批次状态信息
-	@XStreamAlias("StatMsg")
-	private String statMsg;
+	//项目名称
+	@XStreamAlias("ProName")
+	private String proName;
+	//班组名称
+	@XStreamAlias("GrpName")
+	private String grpName;
+	//总笔数
+	@XStreamAlias("TotalCnt")
+	private String totalCnt;
+	//总金额
+	@XStreamAlias("TotalAmt")
+	private String totalAmt;
 	//文件路径
 	@XStreamAlias("FilePath")
 	private String filePath;
 	//文件名称
 	@XStreamAlias("FileName")
 	private String fileName;
-	//总笔数
-	@XStreamAlias("TotalCnt")
-	private String totalCnt;
 
 	//备用字段
 	@XStreamAlias("Fld1")
@@ -64,28 +65,36 @@ public class QueryResultRequestModel extends RequestVO {
 		this.batNo = batNo;
 	}
 
-	public String getType() {
-		return type;
+	public String getProName() {
+		return proName;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setProName(String proName) {
+		this.proName = proName;
 	}
 
-	public String getStatNo() {
-		return statNo;
+	public String getGrpName() {
+		return grpName;
 	}
 
-	public void setStatNo(String statNo) {
-		this.statNo = statNo;
+	public void setGrpName(String grpName) {
+		this.grpName = grpName;
 	}
 
-	public String getStatMsg() {
-		return statMsg;
+	public String getTotalCnt() {
+		return totalCnt;
 	}
 
-	public void setStatMsg(String statMsg) {
-		this.statMsg = statMsg;
+	public void setTotalCnt(String totalCnt) {
+		this.totalCnt = totalCnt;
+	}
+
+	public String getTotalAmt() {
+		return totalAmt;
+	}
+
+	public void setTotalAmt(String totalAmt) {
+		this.totalAmt = totalAmt;
 	}
 
 	public String getFilePath() {
@@ -102,14 +111,6 @@ public class QueryResultRequestModel extends RequestVO {
 
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
-	}
-
-	public String getTotalCnt() {
-		return totalCnt;
-	}
-
-	public void setTotalCnt(String totalCnt) {
-		this.totalCnt = totalCnt;
 	}
 
 	public String getFld1() {

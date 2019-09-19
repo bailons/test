@@ -1,19 +1,23 @@
-package vo;
+package bank.vo;
 
+import bank.common.RequestVO;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 /**
- * 余额查询[ZJW001]请求体
+ *保证金查询[ZJW003]请求体
  **/
 @XStreamAlias("data")
-public class BalanceRequestVO extends RequestVO {
+public class DepositRequestVO extends RequestVO {
 
     //账号
     @XStreamAlias("AcctNo")
     private String acctNo;
-    //付款人户名
-    @XStreamAlias("PayAcctName")
-    private String payAcctName;
+    //交易日期
+    @XStreamAlias("CtrlDate")
+    private String ctrlDate;
+    //事故序号
+    @XStreamAlias("CtrlSeqno")
+    private String ctrlSeqno;
     //备用字段1
     @XStreamAlias("Fld1")
     private String fld1;
@@ -38,12 +42,20 @@ public class BalanceRequestVO extends RequestVO {
         this.acctNo = acctNo;
     }
 
-    public String getPayAcctName() {
-        return payAcctName;
+    public String getCtrlDate() {
+        return ctrlDate;
     }
 
-    public void setPayAcctName(String payAcctName) {
-        this.payAcctName = payAcctName;
+    public void setCtrlDate(String ctrlDate) {
+        this.ctrlDate = ctrlDate;
+    }
+
+    public String getCtrlSeqno() {
+        return ctrlSeqno;
+    }
+
+    public void setCtrlSeqno(String ctrlSeqno) {
+        this.ctrlSeqno = ctrlSeqno;
     }
 
     public String getFld1() {

@@ -1,37 +1,33 @@
-package vo;
+package bank.vo;
 
+import bank.common.RequestVO;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import java.math.BigDecimal;
-
 /**
- * 保证金查询[ZJW003]响应体
+ * 余额查询[ZJW001]请求体
  **/
 @XStreamAlias("data")
-public class DepositResponseVO extends ResponseVO {
+public class BalanceRequestVO extends RequestVO {
 
     //账号
     @XStreamAlias("AcctNo")
     private String acctNo;
-    //圈存金额以分为单位
-    @XStreamAlias("CtrlBalance")
-    private BigDecimal ctrlBalance;
-    //圈存状态
-    @XStreamAlias("Status")
-    private String status;
-    //响应备用字段1
+    //付款人户名
+    @XStreamAlias("PayAcctName")
+    private String payAcctName;
+    //备用字段1
     @XStreamAlias("Fld1")
     private String fld1;
-    ////响应备用字段2
+    //备用字段2
     @XStreamAlias("Fld2")
     private String fld2;
-    //响应备用字段3
+    //备用字段3
     @XStreamAlias("Fld3")
     private String fld3;
-    //响应备用字段4
+    //备用字段4
     @XStreamAlias("Fld4")
     private String fld4;
-    //响应备用字段5
+    //备用字段5
     @XStreamAlias("Fld5")
     private String fld5;
 
@@ -43,20 +39,12 @@ public class DepositResponseVO extends ResponseVO {
         this.acctNo = acctNo;
     }
 
-    public BigDecimal getCtrlBalance() {
-        return ctrlBalance;
+    public String getPayAcctName() {
+        return payAcctName;
     }
 
-    public void setCtrlBalance(BigDecimal ctrlBalance) {
-        this.ctrlBalance = ctrlBalance;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
+    public void setPayAcctName(String payAcctName) {
+        this.payAcctName = payAcctName;
     }
 
     public String getFld1() {

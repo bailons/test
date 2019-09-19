@@ -1,4 +1,4 @@
-package vo;
+package bank.common;
 
 
 public class Constant {
