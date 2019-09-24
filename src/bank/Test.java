@@ -22,16 +22,16 @@ public class Test {
     private static final String SEQ = "|";
 
     public static void main(String[] args) throws Exception {
-        /*//e筑云请求银行报文体
+        //e筑云请求银行报文体
         EZY2Bank();
-        //e筑云解析银行返回报文
+        /*//e筑云解析银行返回报文
         Bank2EZY();*/
 
         //写文件
         //writeFile();
 
         //解析文件
-        List<String[]> data = FileUtil.readTxt("D:/20190919/201909191847.txt");
+        /*List<String[]> data = FileUtil.readTxt("D:/20190919/201909191847.txt");
         List<PayRollDetailVO> payRollDetailVOS = new LinkedList<>();
         PayRollDetailVO PayRollDetailVO;
         if (data != null && data.size() > 1) {
@@ -47,7 +47,7 @@ public class Test {
             for(PayRollDetailVO rollDetailVO:payRollDetailVOS){
                 System.out.println(rollDetailVO.toString());
             }
-        }
+        }*/
     }
 
     public static void writeFile() throws Exception {
@@ -147,8 +147,11 @@ public class Test {
         balanceRequestVO.setFld4("");
         balanceRequestVO.setFld5("");
 
-        String requestData = MessageUtil.build(balanceRequestVO);
+        String requestData = MessageUtil.buildMessage(balanceRequestVO,balanceRequestVO.getTransCode());
         System.out.println(requestData);
+
+        String aaaa = requestData.substring(requestData.indexOf("0ZJW")+1,requestData.indexOf("0ZJW")+7);
+        System.out.println(aaaa);
     }
 
 

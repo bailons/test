@@ -91,9 +91,9 @@ public class MessageUtil {
 		return df.format(value);
 	}
 
-	public static String build(Object o){
+	public static String buildMessage(Object o,String transCode) {
 		StringBuffer sb = new StringBuffer();
-		sb.append(Constant.ENCODE_HEAD).append(MessageUtil.beanToXml(o).replaceAll(" ","")).append("\n");
+		sb.append(Constant.FLAG).append(transCode).append(Constant.ENCODE_HEAD).append(MessageUtil.beanToXml(o).replaceAll(" ","")).append("\n");
 		int length = 0;
 		try {
 			length = sb.toString().getBytes(Constant.GBK_ENCODE).length;
