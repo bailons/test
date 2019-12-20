@@ -6,8 +6,10 @@ import bank.vo.BalanceRequestVO;
 import bank.vo.BalanceResponseVO;
 import bank.vo.PayRollDetailVO;
 
-import java.io.File;
+import javax.management.relation.RoleUnresolved;
+import java.io.*;
 import java.math.BigDecimal;
+import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
@@ -21,9 +23,9 @@ public class Test {
     private final static SimpleDateFormat FILEF_NAME = new SimpleDateFormat("yyyyMMddHHss");
     private static final String SEQ = "|";
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
         //e筑云请求银行报文体
-        EZY2Bank();
+        //EZY2Bank();
         /*//e筑云解析银行返回报文
         Bank2EZY();*/
 
@@ -48,6 +50,89 @@ public class Test {
                 System.out.println(rollDetailVO.toString());
             }
         }*/
+        int x=0;
+        try {
+            x = test2(20);
+            System.out.println("继续执行==================>"+x);
+        }catch (Exception e){
+            System.out.println("exception===>"+e.getMessage());;
+        }finally {
+            System.out.println("sadfsadfasdfadsf");
+        }
+
+        /*int x = test1(0);
+        System.out.println("继续执行==================>");*/
+
+        //System.out.println(test2(5));
+
+        //System.out.println(new Integer(1).toString().equals("1"));
+
+        /*System.out.println(new Integer(1).equals(new Integer(1)));*/
+
+        /*try {
+            //创建Socket对象
+            Socket socket=new Socket("192.168.0.165",9900);
+
+            //根据输入输出流和服务端连接
+            OutputStream outputStream=socket.getOutputStream();
+            //获取一个输出流，向服务端发送信息
+            PrintWriter printWriter=new PrintWriter(outputStream);
+            printWriter.print(rquestTest());
+            printWriter.flush();
+            socket.shutdownOutput();//关闭输出流
+
+            //获取一个输入流，接收服务端的信息
+            InputStream inputStream=socket.getInputStream();
+            InputStreamReader inputStreamReader=new InputStreamReader(inputStream);
+            //包装成字符流，提高效率
+            BufferedReader bufferedReader=new BufferedReader(inputStreamReader);
+            //缓冲区
+            String info="";
+            String temp=null;//临时变量
+            while((temp=bufferedReader.readLine())!=null){
+                info+=temp;
+                System.out.println("客户端接收服务端发送信息："+info);
+            }
+
+            //关闭相对应的资源
+            bufferedReader.close();
+            inputStream.close();
+            printWriter.close();
+            outputStream.close();
+            socket.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
+
+    }
+
+    public static String rquestTest(){
+        QueryPayRollRequestModel request = new QueryPayRollRequestModel();
+        request.setAcctNo("84534542342342334");
+        request.setBatNo("Z19092700000");
+        request.setTransCode("ZJW004");
+        //组装xml
+        String requestData = MessageUtil.buildMessage(request, "ZJW004");
+        System.out.println("request from bank===>"+requestData);
+        return requestData;
+    }
+
+    public static int test2(int x){
+        int i=0;
+        try {
+            i = 10 % x;
+        }catch (Exception e){
+            i = 555555;
+            throw new RuntimeException(e.getMessage());
+        }
+        System.out.println("test2====="+i);
+        return i;
+
+    }
+
+    public static int test1(int x) throws Exception{
+        int i= 10/x;
+        return i;
     }
 
     public static void writeFile() throws Exception {
