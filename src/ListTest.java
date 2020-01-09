@@ -1,6 +1,8 @@
 import entity.Person;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -33,16 +35,41 @@ public class ListTest {
         System.out.println(l2);*/
 
 
-
-        /*Person p1;
+        Person p1;
         List<Person> people = new LinkedList();
-        for(int i=0;i<3;i++){
+        for(int i=0;i<3;i++) {
             p1 = new Person();
-            p1.setId(i+"");
-            p1.setName(i+"");
-            p1.setAge(i+20);
+            p1.setId(i + "");
+            p1.setName(i + "x");
+            /*if(i == 2){
+                p1.setName("lisi");
+            }else{
+                p1.setName("zs");
+            }*/
+            p1.setAge(i + 20);
             people.add(p1);
-        }*/
+        }
+
+        Map<String, Person> collect = people.stream().collect(Collectors.toMap(Person::getName, p -> p));
+        System.out.println(collect);
+
+
+        String id = "123123xx";
+        id = id.toUpperCase();
+        System.out.println(id);
+
+        /*Person p2 = new Person();
+        List<Person> people2 = new LinkedList();
+        people.forEach(person -> {
+            p2.setId(person.getId());
+            p2.setAge(person.getAge());
+            p2.setName(person.getName());
+            people2.add(p2);
+        });*/
+
+        /*List<Person> personList = people.stream().filter(person -> "zs".equals(person.getName())).collect(Collectors.toList());
+
+        System.out.println(personList);*/
 
         /*people.add(p1);
         people.add(p2);

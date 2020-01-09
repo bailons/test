@@ -1,11 +1,5 @@
 package exception;
 
-import list2map.Person;
-
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,13 +8,12 @@ public class Test {
 
     public static void main(String[] args) {
 
-        /*try {
-            js();
+        try {
+            jsDetail();
         } catch (Exception e) {
-            System.out.println("0000000===e.getMessage()>"+e.getMessage());
+            System.out.println("0000000===e.getMessage()>" + e.getMessage());
             System.out.println("0000000===e.printStackTrace()>");
-            e.printStackTrace();
-        }*/
+        }
 
         //System.out.println(dealData("1111dd2222"));
         /*BigDecimal decimal = new BigDecimal("1.12345");
@@ -46,7 +39,7 @@ public class Test {
         //System.out.println(EqpDeviceTypeEnum.TAILBOX.getCode());
         /*Integer a = new Integer(1231);
         System.out.println(a.toString());*/
-        List<String> old = new LinkedList<>();
+        /*List<String> old = new LinkedList<>();
         old.add("aaaa");
         old.add("bbbb");
         old.add("cccc");
@@ -58,7 +51,7 @@ public class Test {
         news.add("ffff");
 
         old.removeAll(news);
-        old.forEach(o-> System.out.println(o));
+        old.forEach(o-> System.out.println(o));*/
 
        /* String aaa= "asdfasdf21231,1231dsadwasdf";
         String[] aad = aaa.split(",");*/
@@ -121,11 +114,8 @@ public class Test {
     private static void  jsDetail() throws Exception{
         try {
             int i = 1 / 0;
-        }catch (RuntimeException e){
-            System.out.println("2222222===e.getMessage()>"+e.getMessage());
-            System.out.println("2222222===e.printStackTrace()>");
-            e.printStackTrace();
-            throw new RuntimeException("底层计算出错,请检查!");
+        } finally {
+            System.out.println("jsDetail() exception...");
         }
 
     }
